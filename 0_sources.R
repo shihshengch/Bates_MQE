@@ -22,8 +22,6 @@ library(abind)
 # load data
 load("option_data.RData")
 
-########################### Codes for Chapter 2 & 3 ############################
-
 # Merton Characteristic Function
 MertonCF = function(u, params, S0, r, q, T){
   lambdaJ  = params[1]
@@ -170,8 +168,6 @@ BatesIVLoss = function(params, S0, r, q, T, K, MktPrice, MktIV, ...){
   if (is.na(loss)) loss = Inf
   return(loss)
 }
-
-########################### Codes for Chapter 4 & 5 ############################
 
 # Single-asset Bates QE scheme
 BatesQE = function(params, S0, r, q, T, NT, NS, dZ = NULL, dZJ = NULL) {
@@ -445,8 +441,6 @@ BatesMQE = function(model_corr, PARAMS, NT, NS, T, Nasset, ZJ = TRUE, LJcor = NU
   
   return(list(S.sim = S.sim, V.sim = V.sim, R.sim = R.sim))
 }
-
-############################# Codes for Chapter 6 ##############################
 
 # Function for pricing the best-of-four call option
 best.of.Call = function(P, K, r, T, ZJ = TRUE, LJcor = NULL) {
